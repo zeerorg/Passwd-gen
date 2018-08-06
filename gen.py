@@ -1,4 +1,4 @@
-import secrets
+from random import SystemRandom
 
 def get_word(num_un):
   num = str(num_un)
@@ -16,7 +16,8 @@ def get_word(num_un):
 
 
 def gen_random_num(digits=4):
-  num = [1 + secrets.randbelow(6) for x in range(digits)]
+  cryptogen = SystemRandom()
+  num = [1 + cryptogen.randrange(6) for x in range(digits)]
   return int(''.join(map(str, num)))
 
 def main():
